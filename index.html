@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corina Limbășan | Copywriter &amp; Email Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #14213d;
+    --navy-deep: #0d1730;
+    --gold: #c9a227;
+    --gold-light: #e0bf4f;
+    --cream: #faf8f3;
+    --ink: #1c2434;
+    --muted: #5b6478;
+    --line: #e7e3d8;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Playfair Display',serif;
+  }
+
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(250,248,243,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .logo-mark{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:26px;
+    color:var(--gold);
+    line-height:1;
+    letter-spacing:-1px;
+  }
+  .logo-text{
+    font-family:'Playfair Display',serif;
+    font-weight:800;
+    font-size:20px;
+    letter-spacing:1px;
+    color:var(--navy);
+    text-transform:uppercase;
+  }
+  .nav-links{
+    display:flex;
+    gap:36px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--navy);
+  }
+  .nav-links a{opacity:0.75;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    background:var(--navy);
+    color:#fff;
+    padding:11px 22px;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:600;
+  }
+  .burger{display:none;font-size:28px;color:var(--navy);cursor:pointer;background:none;border:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .eyebrow{
+    color:var(--gold);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(48px,7vw,84px);
+    line-height:0.98;
+    color:var(--navy);
+    font-weight:800;
+    margin-bottom:26px;
+  }
+  .hero-tagline{
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:0.4px;
+    color:var(--navy);
+    text-transform:uppercase;
+    margin-bottom:22px;
+    line-height:1.5;
+  }
+  .hero-tagline .dot{color:var(--gold);margin:0 8px;}
+  .hero-desc{
+    font-size:18px;
+    color:var(--muted);
+    max-width:480px;
+    margin-bottom:38px;
+  }
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 30px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:15px;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .btn-primary{
+    background:var(--navy);
+    color:#fff;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(20,33,61,0.28);}
+  .btn-outline{
+    border:1.5px solid var(--gold);
+    color:var(--navy);
+  }
+  .btn-outline:hover{background:var(--gold);color:#fff;transform:translateY(-2px);}
+
+  .hero-photo{
+    position:relative;
+  }
+  .hero-photo-frame{
+    aspect-ratio:4/5;
+    border-radius:16px;
+    background:linear-gradient(150deg,var(--navy) 0%,var(--navy-deep) 60%, #1e2b4d 100%);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    box-shadow:0 30px 60px -20px rgba(20,33,61,0.45);
+  }
+  .hero-photo-frame::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(201,162,39,0.18), transparent 55%),
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 40px);
+  }
+  .hero-photo-caption{
+    position:relative;
+    z-index:2;
+    padding:28px;
+    color:#fff;
+  }
+  .hero-photo-caption .name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px;}
+  .hero-photo-caption .role{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--gold-light);}
+  .hero-photo-badge{
+    position:absolute;
+    top:-14px;
+    right:-14px;
+    background:var(--gold);
+    color:#fff;
+    width:88px;
+    height:88px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:12px;
+    line-height:1.3;
+    box-shadow:0 12px 24px rgba(201,162,39,0.4);
+    transform:rotate(8deg);
+  }
+
+  section{padding:110px 0;}
+
+  /* ---------- Despre mine ---------- */
+  .despre{
+    background:#fff;
+  }
+  .despre-grid{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:72px;
+    align-items:center;
+  }
+  .despre-visual{
+    aspect-ratio:1/1;
+    border-radius:16px;
+    background:
+      linear-gradient(160deg, #efe9d8 0%, #e4dcc4 100%);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .despre-visual::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 75% 15%, rgba(201,162,39,0.25), transparent 45%);
+  }
+  .despre-card{
+    position:relative;
+    z-index:2;
+    width:62%;
+    aspect-ratio:3/4;
+    background:linear-gradient(160deg,#161f38,#0d1730);
+    border-radius:6px;
+    box-shadow:0 30px 50px -18px rgba(20,33,61,0.5);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    text-align:center;
+    border:1px solid rgba(201,162,39,0.5);
+  }
+  .despre-card .serif{color:var(--gold-light);font-size:19px;font-weight:700;letter-spacing:1px;}
+  .despre-card .rule{width:36px;height:2px;background:var(--gold);margin:14px auto;}
+  h2{
+    font-size:clamp(32px,4vw,44px);
+    color:var(--navy);
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:22px;
+  }
+  .despre-text p{
+    color:var(--muted);
+    font-size:17px;
+    margin-bottom:18px;
+    max-width:520px;
+  }
+  .despre-stats{
+    display:flex;
+    gap:40px;
+    margin-top:34px;
+  }
+  .stat .num{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;color:var(--navy);}
+  .stat .label{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;margin-top:2px;}
+
+  /* ---------- Servicii ---------- */
+  .servicii{background:var(--cream);}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 64px;}
+  .section-head h2{margin-bottom:0;}
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:36px 28px;
+    transition:transform .25s, box-shadow .25s, border-color .25s;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 24px 40px -20px rgba(20,33,61,0.2);
+    border-color:var(--gold);
+  }
+  .card-icon{
+    width:52px;height:52px;
+    border-radius:10px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+    color:var(--gold-light);
+    font-size:22px;
+  }
+  .card h3{
+    font-size:20px;
+    color:var(--navy);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .card p{color:var(--muted);font-size:15px;}
+
+  /* ---------- Cum lucrez ---------- */
+  .proces{
+    background:var(--navy-deep);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .proces::before{
+    content:'';
+    position:absolute;
+    top:-200px;right:-200px;
+    width:500px;height:500px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(201,162,39,0.12), transparent 70%);
+  }
+  .proces .eyebrow{color:var(--gold-light);}
+  .proces h2{color:#fff;}
+  .proces .section-head p{color:rgba(255,255,255,0.65);margin-top:16px;font-size:17px;}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    position:relative;
+    margin-top:20px;
+  }
+  .step{
+    text-align:center;
+    padding:0 20px;
+    position:relative;
+  }
+  .step::after{
+    content:'';
+    position:absolute;
+    top:39px;
+    right:-50%;
+    width:100%;
+    height:1px;
+    background:rgba(201,162,39,0.35);
+  }
+  .step:last-child::after{display:none;}
+  .step-num{
+    width:78px;height:78px;
+    border:1.5px solid var(--gold);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    font-weight:700;
+    color:var(--gold-light);
+    margin:0 auto 26px;
+    background:var(--navy-deep);
+    position:relative;
+    z-index:2;
+  }
+  .step h3{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    margin-bottom:12px;
+  }
+  .step p{
+    color:rgba(255,255,255,0.65);
+    font-size:15px;
+  }
+
+  /* ---------- Proiecte ---------- */
+  .proiecte{background:#fff;}
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .proj-card{
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--cream);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .proj-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -20px rgba(20,33,61,0.22);}
+  .proj-visual{
+    height:200px;
+    background:linear-gradient(150deg,var(--navy),#22335c);
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .proj-visual span{
+    font-family:'Playfair Display',serif;
+    color:rgba(255,255,255,0.85);
+    font-size:15px;
+    letter-spacing:0.5px;
+  }
+  .proj-body{padding:26px 24px 30px;}
+  .proj-tag{
+    color:var(--gold);
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    display:inline-block;
+  }
+  .proj-body h3{font-size:19px;color:var(--navy);margin-bottom:10px;}
+  .proj-body p{color:var(--muted);font-size:14.5px;}
+
+  /* ---------- Testimonial ---------- */
+  .testimonial{
+    background:var(--cream);
+    text-align:center;
+  }
+  .testimonial blockquote{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(24px,3vw,32px);
+    color:var(--navy);
+    max-width:760px;
+    margin:0 auto 26px;
+    font-weight:600;
+    line-height:1.4;
+    font-style:italic;
+  }
+  .testimonial .who{color:var(--muted);font-weight:600;font-size:14px;letter-spacing:0.4px;text-transform:uppercase;}
+
+  /* ---------- Contact ---------- */
+  .contact{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+  }
+  .contact h2{color:#fff;margin-bottom:18px;}
+  .contact p{color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 36px;font-size:17px;}
+  .contact .btn-primary{background:var(--gold);}
+  .contact .btn-primary:hover{background:var(--gold-light);}
+
+  footer{
+    background:var(--navy-deep);
+    color:rgba(255,255,255,0.55);
+    padding:36px 0;
+    text-align:center;
+    font-size:14px;
+  }
+  footer .logo-text{color:rgba(255,255,255,0.85);}
+
+  @media (max-width:860px){
+    .nav-links, .nav-cta{display:none;}
+    .burger{display:block;}
+    .hero-grid, .despre-grid{grid-template-columns:1fr;}
+    .hero{padding-top:56px;}
+    .hero-photo{order:-1;max-width:340px;margin:0 auto 20px;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:1fr;gap:44px;}
+    .step::after{display:none;}
+    .proj-grid{grid-template-columns:1fr;}
+    section{padding:72px 0;}
+  }
+  @media (max-width:520px){
+    .cards{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="logo-mark">C</span>
+      <span class="logo-text">Corina Limbășan</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#despre">Despre mine</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#proces">Cum lucrez</a>
+      <a href="#proiecte">Proiecte</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Contactează-mă</a>
+    <button class="burger">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Cuvinte care contează</span>
+      <h1>Corina<br>Limbășan</h1>
+      <p class="hero-tagline">Copywriter <span class="dot">•</span> Email Marketing <span class="dot">•</span> Landing Pages <span class="dot">•</span> Content Strategy</p>
+      <p class="hero-desc">Transform ideile în mesaje care inspiră încredere și contribuie la dezvoltarea afacerii tale.</p>
+      <div class="btn-row">
+        <a href="#servicii" class="btn btn-primary">Vezi serviciile →</a>
+        <a href="#contact" class="btn btn-outline">Contactează-mă</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-badge">Copywriting<br>de impact</div>
+        <div class="hero-photo-caption">
+          <div class="name">Corina L.</div>
+          <div class="role">Distribuitor Snep · Mediaș</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="despre" id="despre">
+  <div class="wrap despre-grid">
+    <div class="despre-visual">
+      <div class="despre-card">
+        <div class="serif">Copywriting<br>Strategy</div>
+        <div class="rule"></div>
+        <div style="color:rgba(255,255,255,0.6);font-size:13px;">Brand Voice · Audience Insight<br>Headline Ideas</div>
+      </div>
+    </div>
+    <div class="despre-text">
+      <span class="eyebrow">Despre mine</span>
+      <h2>Fiecare brand are o poveste.</h2>
+      <p>Rolul meu este să o exprim prin cuvintele potrivite — clare, autentice și construite să rezoneze cu oamenii cărora te adresezi.</p>
+      <p>Lucrez îndeaproape cu fiecare client pentru a înțelege cu adevărat afacerea, publicul și obiectivele lui, astfel încât fiecare text să contribuie direct la rezultate: mai multă încredere, mai multe conversii, o relație mai puternică cu clienții tăi.</p>
+      <div class="despre-stats">
+        <div class="stat"><div class="num">3+</div><div class="label">Ani experiență</div></div>
+        <div class="stat"><div class="num">20+</div><div class="label">Proiecte livrate</div></div>
+        <div class="stat"><div class="num">100%</div><div class="label">Texte personalizate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="servicii" id="servicii">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Serviciile mele</span>
+      <h2>Soluții de copywriting pentru afacerea ta</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">✎</div>
+        <h3>Copywriting</h3>
+        <p>Texte persuasive pentru site, materiale de prezentare și campanii, adaptate vocii brandului tău.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">▤</div>
+        <h3>Landing Pages</h3>
+        <p>Pagini concepute pentru a transforma vizitatori în clienți.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✉</div>
+        <h3>Email Marketing</h3>
+        <p>Secvențe de emailuri care construiesc relații și generează vânzări.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">◈</div>
+        <h3>Content Strategy</h3>
+        <p>Un plan de conținut coerent, aliniat cu obiectivele tale de business pe termen lung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proces" id="proces">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Cum lucrez</span>
+      <h2>Un proces clar, rezultate mai bune</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Discuție</h3>
+        <p>Înțeleg obiectivele tale, audiența și provocările afacerii.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Research</h3>
+        <p>Analizez piața, concurența și comportamentul consumatorului.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Redactare</h3>
+        <p>Creez texte clare, persuasive și adaptate obiectivelor tale.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Revizuire</h3>
+        <p>Ajustăm împreună fiecare detaliu până textul reflectă perfect brandul tău.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proiecte" id="proiecte">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="display:block;text-align:center;">Portofoliu</span>
+      <h2>Proiecte care vorbesc de la sine</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-visual"><span>Sănătate &amp; Wellness</span></div>
+        <div class="proj-body">
+          <span class="proj-tag">Sănătate &amp; Wellness</span>
+          <h3>Campanie produse nutriționale</h3>
+          <p>Texte pentru rețele sociale, landing page și secvențe de email pentru un brand de suplimente premium.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-visual"><span>E-commerce</span></div>
+        <div class="proj-body">
+          <span class="proj-tag">E-commerce</span>
+          <h3>Optimizare pagini de produs</h3>
+          <p>Rescriere descrieri de produs orientate spre conversie pentru un magazin online.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-visual"><span>Servicii Locale</span></div>
+        <div class="proj-body">
+          <span class="proj-tag">Servicii Locale</span>
+          <h3>Pachet marketing complet</h3>
+          <p>Scripturi video, reclame text și strategie de targetare pentru o clinică din domeniul sănătății.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="wrap">
+    <blockquote>„Corina a înțeles exact vocea brandului nostru și a transformat-o în texte care chiar vând.”</blockquote>
+    <div class="who">— Client mulțumit</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold-light);">Hai să lucrăm împreună</span>
+    <h2>Ai un proiect în minte?</h2>
+    <p>Spune-mi mai multe despre afacerea ta și hai să găsim cuvintele potrivite pentru ea.</p>
+    <a href="mailto:contact@corinalimbasan.ro" class="btn btn-primary">Trimite-mi un mesaj</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo-text">Corina Limbășan</span>
+    <p style="margin-top:10px;">© 2026 Corina Limbășan. Toate drepturile rezervate.</p>
+  </div>
+</footer>
+
+</body>
+</html>
